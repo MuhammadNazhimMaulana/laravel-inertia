@@ -2,6 +2,8 @@
 
 Untuk melakukan konfigurasi Laravel dengan menggunakan Inertia ini perlu diingat bahwa aplikasi laravel harus disiapkan kemudian silakan pasang dulu dependencies Inertianya dengan perintah berikut ini:
 
+# Server Side Preparation
+
 ```
 composer require inertiajs/inertia-laravel
 ```
@@ -59,4 +61,45 @@ class EventsController extends Controller
         ]);
     }
 }
+```
+
+# Client Side Preparation
+
+Selanjutnya yang perlu dilakukan adalah menjalankan perintah berikut ini terlebih dahulu
+
+```
+npm install
+```
+
+Setelah berhasil, maka selanjutnya yang perlu dijalankan adalah perintah berikut ini:
+
+```
+npm install @inertiajs/inertia @inertiajs/inertia-vue
+```
+
+Lalu silakan install vue js (disini yang digunakan adalah vue 2)
+
+```
+npm install vue@2
+```
+
+Silakan Jalankan 
+
+```
+npm run dev
+```
+
+Apabila terjadi error maka silakan ubah webpack.js menjadi seperti berikut ini:
+
+```js
+ mix.js('resources/js/app.js', 'public/js').vue()
+.postCss('resources/css/app.css', 'public/css', [
+    //
+]);
+```
+
+Kalau proses run dev sudah berhasil silakan lakukan sekali lagi dan terakhir silakan jalankan perintah berikut ini untuk menjalankan local development server dari laravelnya
+
+```
+php artisan serve
 ```
