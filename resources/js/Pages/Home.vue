@@ -1,8 +1,8 @@
 <template>
-   <div>
+   <Layout>
+        <Head title="Home" />
         <h1>Halo {{ title }}</h1>
-        <Link href="/about" as="button">About</Link>
-   </div>
+   </Layout>
 </template>
 
 <style>
@@ -10,13 +10,17 @@
 </style>
 
 <script>
+import Layout from '../Shared/Layout.vue'
+
 // Import Component
-import { Link } from '@inertiajs/inertia-vue'
+import { Link, Head } from '@inertiajs/inertia-vue'
 
 export default {
     props: ['title'],
     components: {
-        Link
+        Link,
+        Head,
+        Layout,
     }
 }
 </script>
