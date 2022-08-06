@@ -103,3 +103,9 @@ Kalau proses run dev sudah berhasil silakan lakukan sekali lagi dan terakhir sil
 ```
 php artisan serve
 ```
+
+Dan untuk mempermudah agar setiap kali menyimpan perubahan dan langsung di build maka bisa dengan menjalan kan perintah berikut ini pada terminal yang satu lagi
+
+```
+npm run watch
+```
