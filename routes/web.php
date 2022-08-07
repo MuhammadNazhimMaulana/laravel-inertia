@@ -23,6 +23,12 @@ Route::get('/about', [PagesController::class, 'about']);
 
 // User
 Route::prefix('user')->group(function () {
-    Route::get('/', [UserController::class, 'index']);
+    Route::get('/', [UserController::class, 'index'])->name('user.index');
+
+    // Create
+    Route::get('/create', [UserController::class, 'create']);
+    Route::post('/create', [UserController::class, 'store']);
+
+    // Get Detail
     Route::get('/{user}', [UserController::class, 'show']);
 });

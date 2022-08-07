@@ -3,8 +3,11 @@
         <Head title="List User" />
         <h1>{{ title }}</h1>
 
+        <!-- Link For Create -->
+        <Link href="/user/create">Create User</Link>
+
         <ul>
-            <li v-for="user in users" :key="user">
+            <li v-for="user in users" :key="user.id">
                 <p>{{user.name }}</p>
                 <Link :href="`/user/${ user.id }`">Detail</Link>
             </li>
