@@ -6,6 +6,11 @@
         <!-- Link For Create -->
         <Link href="/user/create">Create User</Link>
 
+        <!-- Flash Message -->
+        <div v-if="$page.props.flash.message" class="alert">
+            {{ $page.props.flash.message }}
+        </div>
+
         <ul>
             <li v-for="user in users" :key="user.id">
                 <p>{{user.name }}</p>

@@ -23,7 +23,7 @@ Route::get('/about', [PagesController::class, 'about']);
 
 // User
 Route::prefix('user')->group(function () {
-    Route::get('/', [UserController::class, 'index'])->name('user.index');
+    Route::get('/', [UserController::class, 'index']);
 
     // Create
     Route::get('/create', [UserController::class, 'create']);

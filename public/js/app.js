@@ -2294,6 +2294,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -26891,6 +26896,14 @@ var render = function () {
       _c("h1", [_vm._v(_vm._s(_vm.title))]),
       _vm._v(" "),
       _c("Link", { attrs: { href: "/user/create" } }, [_vm._v("Create User")]),
+      _vm._v(" "),
+      _vm.$page.props.flash.message
+        ? _c("div", { staticClass: "alert" }, [
+            _vm._v(
+              "\n        " + _vm._s(_vm.$page.props.flash.message) + "\n    "
+            ),
+          ])
+        : _vm._e(),
       _vm._v(" "),
       _c(
         "ul",

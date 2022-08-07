@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\User;
-use Illuminate\Support\Facades\{Hash, Redirect};
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -32,14 +32,22 @@ class UserController extends Controller
     // Storing Data
     public function store(Request $request)
     {
-        $user = new User;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->save();
+        // Cara Insert Pertama
+        // $user = new User;
+        // $user->name = $request->name;
+        // $user->email = $request->email;
+        // $user->password = Hash::make($request->password);
+        // $user->save();
+
+        // Cara Kedua
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
         // Redirect To All User
-        return Redirect::route('user.index');
+        return redirect('/user')->with('message', 'User Berhasil Dibuat');
     }
 
     public function show(User $user)
