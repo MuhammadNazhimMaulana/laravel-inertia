@@ -7,14 +7,29 @@
             <div class="form-group">
                 <label>Name</label>
                 <input type="text" v-model="user.name">
+
+                <!-- Errors name -->
+                <p v-if="errors.name" class="error">
+                    {{ errors.name }}
+                </p>
             </div>
             <div class="form-group">
                 <label>Email</label>
                 <input type="text" v-model="user.email">
+
+                <!-- Errors email -->
+                <p v-if="errors.email" class="error">
+                    {{ errors.email }}
+                </p>
             </div>
             <div class="form-group">
                 <label>Password</label>
                 <input type="password" v-model="user.password">
+
+                <!-- Errors password -->
+                <p v-if="errors.password" class="error">
+                    {{ errors.password }}
+                </p>
             </div>
 
             <button type="submit">Register</button>
@@ -37,7 +52,8 @@ export default {
         }
     },
     props: {
-        title: String
+        title: String,
+        errors: Object,
     },
     components:{
         Link,
@@ -55,5 +71,8 @@ export default {
 <style>
     .form-group{
         margin-bottom: 5px;
+    }
+    .error{
+        color: red;
     }
 </style>

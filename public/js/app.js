@@ -2190,6 +2190,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2203,7 +2218,8 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   props: {
-    title: String
+    title: String,
+    errors: Object
   },
   components: {
     Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Link,
@@ -2518,7 +2534,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.form-group{\n    margin-bottom: 5px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.form-group{\n    margin-bottom: 5px;\n}\n.error{\n    color: red;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -26754,6 +26770,16 @@ var render = function () {
                 },
               },
             }),
+            _vm._v(" "),
+            _vm.errors.name
+              ? _c("p", { staticClass: "error" }, [
+                  _vm._v(
+                    "\n                 " +
+                      _vm._s(_vm.errors.name) +
+                      "\n             "
+                  ),
+                ])
+              : _vm._e(),
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "form-group" }, [
@@ -26779,6 +26805,16 @@ var render = function () {
                 },
               },
             }),
+            _vm._v(" "),
+            _vm.errors.email
+              ? _c("p", { staticClass: "error" }, [
+                  _vm._v(
+                    "\n                 " +
+                      _vm._s(_vm.errors.email) +
+                      "\n             "
+                  ),
+                ])
+              : _vm._e(),
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "form-group" }, [
@@ -26804,6 +26840,16 @@ var render = function () {
                 },
               },
             }),
+            _vm._v(" "),
+            _vm.errors.password
+              ? _c("p", { staticClass: "error" }, [
+                  _vm._v(
+                    "\n                 " +
+                      _vm._s(_vm.errors.password) +
+                      "\n             "
+                  ),
+                ])
+              : _vm._e(),
           ]),
           _vm._v(" "),
           _c("button", { attrs: { type: "submit" } }, [_vm._v("Register")]),

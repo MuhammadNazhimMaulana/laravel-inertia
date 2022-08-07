@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\User;
+use App\Http\Requests\User\{StoreRequest};
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -30,7 +31,7 @@ class UserController extends Controller
     }
 
     // Storing Data
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         // Cara Insert Pertama
         // $user = new User;
