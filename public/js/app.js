@@ -2175,7 +2175,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['title']
+  props: {
+    title: String,
+    users: Array
+  }
 });
 
 /***/ }),
@@ -26015,21 +26018,16 @@ var render = function () {
   return _c("div", [
     _c("h1", [_vm._v(_vm._s(_vm.title))]),
     _vm._v(" "),
-    _vm._m(0),
+    _c(
+      "ul",
+      _vm._l(_vm.users, function (user) {
+        return _c("li", { key: user }, [_vm._v(_vm._s(user.name))])
+      }),
+      0
+    ),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", [
-      _c("li", [_vm._v("Toni")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Tono")]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
