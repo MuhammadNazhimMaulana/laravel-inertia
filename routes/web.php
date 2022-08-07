@@ -28,7 +28,10 @@ Route::prefix('user')->group(function () {
     // Create
     Route::get('/create', [UserController::class, 'create']);
     Route::post('/create', [UserController::class, 'store']);
-
+    
     // Get Detail
     Route::get('/{user}', [UserController::class, 'show']);
+    
+    // Delete Data
+    Route::delete('/{id}', [UserController::class, 'delete']);
 });

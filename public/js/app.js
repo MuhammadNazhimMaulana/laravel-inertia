@@ -2264,6 +2264,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2275,6 +2276,15 @@ __webpack_require__.r(__webpack_exports__);
     Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Link,
     Head: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Head,
     Layout: _Shared_Layout_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  methods: {
+    deleteUser: function deleteUser() {
+      if (confirm('Hapus Data User?')) {
+        this.$inertia["delete"]('/user/' + this.user.id);
+      } else {
+        return false;
+      }
+    }
   }
 });
 
@@ -26903,6 +26913,20 @@ var render = function () {
             _c("p", [_vm._v(_vm._s(_vm.user.created_at))]),
             _vm._v(" "),
             _c("Link", { attrs: { href: "/user/" } }, [_vm._v("Kembali")]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                attrs: { href: "#" },
+                on: {
+                  click: function ($event) {
+                    $event.preventDefault()
+                    return _vm.deleteUser.apply(null, arguments)
+                  },
+                },
+              },
+              [_vm._v("Delete")]
+            ),
           ],
           1
         ),

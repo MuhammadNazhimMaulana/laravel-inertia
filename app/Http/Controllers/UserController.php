@@ -60,4 +60,16 @@ class UserController extends Controller
             'user' =>  $user
         ]);
     }
+
+    public function delete(int $id)
+    {
+        // Finding User
+        $user = User::find($id);
+
+        // Delete User
+        $user->delete();
+
+        // Redirect To All User
+        return redirect('/user')->with('message', 'User Berhasil Dihapus');
+    }
 }

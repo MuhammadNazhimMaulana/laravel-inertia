@@ -9,6 +9,7 @@
                 <p>Email: <strong>{{ user.name }}</strong></p>
                 <p>{{ user.created_at }}</p>
                 <Link href="/user/">Kembali</Link>
+                <a href="#" @click.prevent="deleteUser">Delete</a>
             </li>
         </ul>
    </Layout>
@@ -27,6 +28,16 @@ export default {
         Link,
         Head,
         Layout
+    },
+    methods:{
+        deleteUser() {
+            if(confirm('Hapus Data User?'))
+            {
+                this.$inertia.delete('/user/' + this.user.id)
+            }else{
+                return false
+            }
+        }
     }
 }
 </script>
