@@ -20,5 +20,9 @@ Route::get('/', function () {
 
 Route::get('/home', [PagesController::class, 'index']);
 Route::get('/about', [PagesController::class, 'about']);
-Route::get('/users', [UserController::class, 'index']);
-Route::get('/user/{id}', [UserController::class, 'show']);
+
+// User
+Route::prefix('user')->group(function () {
+    Route::get('/', [UserController::class, 'index']);
+    Route::get('/{user}', [UserController::class, 'show']);
+});

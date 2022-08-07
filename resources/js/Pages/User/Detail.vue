@@ -1,5 +1,6 @@
 <template>
-    <div>
+   <Layout>
+        <Head title="Detail User" />
         <h1>{{ title }}</h1>
 
         <ul>
@@ -7,14 +8,15 @@
                 <h3>{{ user.name }}</h3>
                 <p>Email: <strong>{{ user.name }}</strong></p>
                 <p>{{ user.created_at }}</p>
-                <Link href="/users/">Kembali</Link>
+                <Link href="/user/">Kembali</Link>
             </li>
         </ul>
-    </div>
+   </Layout>
 </template>
 
 <script>
 import { Link, Head } from '@inertiajs/inertia-vue'
+import Layout from '../../Shared/Layout.vue'
 
 export default {
     props: {
@@ -24,6 +26,7 @@ export default {
     components:{
         Link,
         Head,
+        Layout
     }
 }
 </script>

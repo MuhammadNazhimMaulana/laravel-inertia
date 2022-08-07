@@ -18,16 +18,13 @@ class UserController extends Controller
         ]);
     }
 
-    public function show(int $id)
+    public function show(User $user)
     {
         $title = 'User Detail';
 
-        // Find Specific user
-        $user = User::find($id);
-
         return Inertia::render('User/Detail', [
             'title' => $title,
-            'user' => $user
+            'user' =>  $user
         ]);
     }
 }

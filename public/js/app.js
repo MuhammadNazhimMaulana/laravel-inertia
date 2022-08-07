@@ -2165,6 +2165,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
+/* harmony import */ var _Shared_Layout_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Shared/Layout.vue */ "./resources/js/Shared/Layout.vue");
+//
 //
 //
 //
@@ -2181,6 +2183,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     title: String,
@@ -2188,7 +2191,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   components: {
     Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Link,
-    Head: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Head
+    Head: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Head,
+    Layout: _Shared_Layout_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -2206,6 +2210,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
+/* harmony import */ var _Shared_Layout_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Shared/Layout.vue */ "./resources/js/Shared/Layout.vue");
+//
 //
 //
 //
@@ -2220,6 +2226,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     title: String,
@@ -2227,7 +2234,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   components: {
     Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Link,
-    Head: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Head
+    Head: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Head,
+    Layout: _Shared_Layout_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -26137,28 +26145,34 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", [_vm._v(_vm._s(_vm.title))]),
-    _vm._v(" "),
-    _c("ul", [
-      _c(
-        "li",
-        [
-          _c("h3", [_vm._v(_vm._s(_vm.user.name))]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v("Email: "),
-            _c("strong", [_vm._v(_vm._s(_vm.user.name))]),
-          ]),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(_vm.user.created_at))]),
-          _vm._v(" "),
-          _c("Link", { attrs: { href: "/users/" } }, [_vm._v("Kembali")]),
-        ],
-        1
-      ),
-    ]),
-  ])
+  return _c(
+    "Layout",
+    [
+      _c("Head", { attrs: { title: "Detail User" } }),
+      _vm._v(" "),
+      _c("h1", [_vm._v(_vm._s(_vm.title))]),
+      _vm._v(" "),
+      _c("ul", [
+        _c(
+          "li",
+          [
+            _c("h3", [_vm._v(_vm._s(_vm.user.name))]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v("Email: "),
+              _c("strong", [_vm._v(_vm._s(_vm.user.name))]),
+            ]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.user.created_at))]),
+            _vm._v(" "),
+            _c("Link", { attrs: { href: "/user/" } }, [_vm._v("Kembali")]),
+          ],
+          1
+        ),
+      ]),
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -26183,28 +26197,34 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", [_vm._v(_vm._s(_vm.title))]),
-    _vm._v(" "),
-    _c(
-      "ul",
-      _vm._l(_vm.users, function (user) {
-        return _c(
-          "li",
-          { key: user },
-          [
-            _c("p", [_vm._v(_vm._s(user.name))]),
-            _vm._v(" "),
-            _c("Link", { attrs: { href: "/user/" + user.id } }, [
-              _vm._v("Detail"),
-            ]),
-          ],
-          1
-        )
-      }),
-      0
-    ),
-  ])
+  return _c(
+    "Layout",
+    [
+      _c("Head", { attrs: { title: "List User" } }),
+      _vm._v(" "),
+      _c("h1", [_vm._v(_vm._s(_vm.title))]),
+      _vm._v(" "),
+      _c(
+        "ul",
+        _vm._l(_vm.users, function (user) {
+          return _c(
+            "li",
+            { key: user },
+            [
+              _c("p", [_vm._v(_vm._s(user.name))]),
+              _vm._v(" "),
+              _c("Link", { attrs: { href: "/user/" + user.id } }, [
+                _vm._v("Detail"),
+              ]),
+            ],
+            1
+          )
+        }),
+        0
+      ),
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -26237,7 +26257,7 @@ var render = function () {
         _vm._v(" "),
         _c("Link", { attrs: { href: "/about" } }, [_vm._v("About")]),
         _vm._v(" "),
-        _c("Link", { attrs: { href: "/users" } }, [_vm._v("User")]),
+        _c("Link", { attrs: { href: "/user" } }, [_vm._v("User")]),
       ],
       1
     ),
