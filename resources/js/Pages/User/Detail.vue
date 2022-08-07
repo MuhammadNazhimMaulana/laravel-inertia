@@ -3,9 +3,11 @@
         <h1>{{ title }}</h1>
 
         <ul>
-            <li v-for="user in users" :key="user">
-                <p>{{user.name }}</p>
-                <Link :href="`/user/${ user.id }`">Detail</Link>
+            <li>
+                <h3>{{ user.name }}</h3>
+                <p>Email: <strong>{{ user.name }}</strong></p>
+                <p>{{ user.created_at }}</p>
+                <Link href="/users/">Kembali</Link>
             </li>
         </ul>
     </div>
@@ -17,7 +19,7 @@ import { Link, Head } from '@inertiajs/inertia-vue'
 export default {
     props: {
         title: String,
-        users: Array
+        user: Object
     },
     components:{
         Link,
