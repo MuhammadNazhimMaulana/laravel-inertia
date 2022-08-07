@@ -28,6 +28,10 @@ Route::prefix('user')->group(function () {
     // Create
     Route::get('/create', [UserController::class, 'create']);
     Route::post('/create', [UserController::class, 'store']);
+
+    // Create
+    Route::get('/{id}/edit', [UserController::class, 'edit']);
+    Route::put('/{id}', [UserController::class, 'update']);
     
     // Get Detail
     Route::get('/{user}', [UserController::class, 'show']);

@@ -10,6 +10,7 @@
                 <p>{{ user.created_at }}</p>
                 <Link href="/user/">Kembali</Link>
                 <a href="#" @click.prevent="deleteUser">Delete</a>
+                <Link :href="`/user/${user.id}/edit`">Edit</Link>
             </li>
         </ul>
    </Layout>

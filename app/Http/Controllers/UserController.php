@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\User;
-use App\Http\Requests\User\{StoreRequest};
+use App\Http\Requests\User\{StoreRequest, UpdateRequest};
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -59,6 +59,32 @@ class UserController extends Controller
             'title' => $title,
             'user' =>  $user
         ]);
+    }
+
+    // Return view for form
+    public function edit(int $id)
+    {
+        $title = 'Edit User';
+
+        // Finding User
+        $user = User::find($id);
+
+        return Inertia::render('User/Edit', [
+            'title' => $title,
+            'user' => $user
+        ]);
+    }
+
+    public function update(UpdateRequest $request, int $id)
+    {
+        $user = User::find($id);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->save();
+
+        // Redirect To All User
+        return redirect('/user')->with('message', 'User Berhasil Diupdate');
     }
 
     public function delete(int $id)
